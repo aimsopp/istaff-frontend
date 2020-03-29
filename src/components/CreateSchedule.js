@@ -42,7 +42,7 @@ export default class CreateSchedule extends Component {
     submitHandler = e => {
         e.preventDefault();
         //console.log(this.state);
-        axios.post('http://localhost:3001/users/schedule', this.state)
+        axios.post('/api/users/schedule', this.state)
             .then(response => {
                 //console.log(response)
                 this.setState({

@@ -35,7 +35,7 @@ export default class Login extends Component {
         //SUCCESSFUL LOGIN RETURNS RESPONSE, AUTHENTICATES & REDIRECTS USER
         axios
             .post(
-                "http://localhost:3001/users/login",
+                "/api/users/login",
                 {
                     userId,
                     password

@@ -32,7 +32,7 @@ class App extends Component {
 
   checkLoginStatus() {
     axios
-      .get("http://localhost:3001/users/login")
+      .get("/api/users/login")
       .then(response => {
         if (
           response.data.logged_in && //IF logged_in IS TRUE

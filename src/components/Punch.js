@@ -33,7 +33,7 @@ export default class Punch extends Component {
         if (this.state.punch === false) {
             e.preventDefault();
             let data = { ...this.state, clock_in: new Date(), idtime_punch: localStorage.getItem('idtime_punch')}
-            axios.post('http://localhost:3001/users/punch', data)
+            axios.post('/api/users/punch', data)
                 .then(response => {
                     document.getElementById('punch').innerHTML = 'Clock Out'; //Change to JSX create Element?
                 })
@@ -43,7 +43,7 @@ export default class Punch extends Component {
         } else {
             e.preventDefault();
             let data = { ...this.state, clock_out: new Date(), idtime_punch: localStorage.getItem('idtime_punch')}
-            axios.post('http://localhost:3001/users/punch', data)
+            axios.post('/api/users/punch', data)
                 .then(response => {
                     localStorage.setItem('idtime_punch', response.data.idtime_punch);
                     //FRONTEND CONSOLE LOG

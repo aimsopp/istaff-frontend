@@ -21,7 +21,7 @@ export default class EmployeeList extends Component {
     
     componentDidMount() {
         let data = { ...this.state, idcomp: localStorage.getItem('idcomp') }
-        axios.post('http://localhost:3001/users', data)
+        axios.post('/api/users', data)
             .then(res => {
                 //console.log(res.data)
                 const users = res.data.map(obj => ({
@@ -61,7 +61,7 @@ export default class EmployeeList extends Component {
     }
 
     handleDelete = (idemp) => {
-        axios.delete(`http://localhost:3001/users/` + idemp)
+        axios.delete(`/api/users/` + idemp)
             .then(res => {
                 //console.log(res)
                 //console.log('it works')
@@ -74,7 +74,7 @@ export default class EmployeeList extends Component {
     activateUser = (idemp) => {
         //console.log('Am I working?')
         //console.log(this.state.users);
-        axios.post('http://localhost:3001/users/' + idemp, this.state)
+        axios.post('/api/users/' + idemp, this.state)
             .then(res => {
                 //console.log(res)
                 this.setState({
@@ -85,7 +85,7 @@ export default class EmployeeList extends Component {
     submitHandler = (idemp) => {
         // e.preventDefault();
         //console.log(this.state);
-        axios.post('http://localhost:3001/users/' + idemp, this.state.users)
+        axios.post('/api/users/' + idemp, this.state.users)
             .then(response => {
                 //console.log(response)
 

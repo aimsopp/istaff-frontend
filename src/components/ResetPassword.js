@@ -16,7 +16,7 @@ export default class ResetPassword extends Component {
     handleSubmit = e => {
         e.preventDefault();
         //console.log(this.state)
-        axios.post("http://localhost:3001/users/emps", this.state)
+        axios.post("/api/users/emps", this.state)
             .then(response => {
                 //console.log(response);
             })
